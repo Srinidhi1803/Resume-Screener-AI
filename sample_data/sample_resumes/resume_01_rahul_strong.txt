@@ -1,0 +1,24 @@
+Rahul Sharma
+Email: rahul.sharma@example.com | Phone: +91 9876543210
+Location: Bangalore, India
+
+PROFESSIONAL SUMMARY:
+Senior Python & NLP Developer with 5 years of experience building machine learning applications, text processing pipelines, and scalable Flask web APIs. Proven track record in document intelligence and cloud deployment on AWS.
+
+EDUCATION:
+Bachelor of Technology (B.Tech) in Computer Science and Engineering
+Indian Institute of Technology, 2017 - 2021
+
+TECHNICAL SKILLS:
+- Languages: Python, JavaScript, SQL, C++
+- NLP & ML: spaCy, NLTK, Scikit-learn, Pandas, NumPy, Machine Learning, NLP
+- Web Backend: Flask, Django, REST API, FastApi
+- Databases: PostgreSQL, MySQL, SQLite
+- Cloud & DevOps: AWS, Docker, Git, GitHub, Linux
+
+WORK EXPERIENCE:
+Senior Software Engineer | AI Solutions Pvt Ltd
+2021 - Present (5 years of experience)
+- Developed end-to-end NLP screening systems using spaCy, Scikit-learn, and TF-IDF similarity algorithms.
+- Created microservices in Flask and hosted applications on AWS EC2 with Docker containers.
+- Integrated PostgreSQL and optimized query performance by 40%.

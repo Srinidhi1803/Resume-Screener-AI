@@ -1,0 +1,19 @@
+Amit Kumar
+Email: amit.kumar@example.com
+
+SUMMARY:
+Data Analyst with 2 years of experience performing exploratory data analysis, business intelligence, and predictive reporting.
+
+EDUCATION:
+Bachelor of Science (BSc) in Statistics & Computer Science
+2020 - 2023
+
+SKILLS:
+- Data Analysis: Python, Pandas, NumPy, SQL, MySQL, Excel, Tableau
+- Machine Learning: Scikit-learn, Statistics, Data Analysis
+- Tools: Git, Jupyter Notebooks
+
+EXPERIENCE:
+Data Analyst | Insights Analytics
+2023 - Present (2 years experience)
+- Processed structured datasets using Pandas and SQL queries to generate weekly BI reports.

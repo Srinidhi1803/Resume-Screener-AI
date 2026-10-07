@@ -1,0 +1,17 @@
+Rohan Mehta
+Email: rohan.mehta@example.com
+
+SUMMARY:
+Engineering Student searching for entry-level internship opportunities in web design and programming.
+
+EDUCATION:
+Diploma in Computer Engineering
+2023 - 2026
+
+SKILLS:
+- Programming: C, C++, HTML, CSS
+- Tools: Git, MS Office
+
+EXPERIENCE:
+Academic Projects Only (0 years experience)
+- Built basic personal portfolio website using HTML and CSS.

@@ -1,0 +1,21 @@
+Vikram Singh
+Email: vikram.singh@example.com
+
+SUMMARY:
+Senior Backend Developer with 8 years of experience designing high-throughput enterprise applications in Java and Spring Boot.
+
+EDUCATION:
+Bachelor of Engineering (B.E.) in Computer Engineering
+2014 - 2018
+
+SKILLS:
+- Languages: Java, C++, SQL, Python
+- Frameworks: Spring Boot, Microservices, Hibernate
+- Infrastructure: Docker, Kubernetes, AWS, Jenkins, Git, Linux
+- Databases: PostgreSQL, MySQL, Redis
+
+EXPERIENCE:
+Lead Backend Engineer | Enterprise Systems Corp
+2018 - Present (8 years of experience)
+- Architected microservice backends in Java Spring Boot supporting millions of daily transactions.
+- Managed Kubernetes clusters and CI/CD pipelines.

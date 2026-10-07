@@ -1,0 +1,19 @@
+Neha Reddi
+Email: neha.reddi@example.com
+
+SUMMARY:
+DevOps & Cloud Engineer with 4 years of experience automating infrastructure deployment, managing Kubernetes clusters, and configuring CI/CD pipelines on AWS.
+
+EDUCATION:
+Bachelor of Technology (B.Tech) in Computer Engineering
+2018 - 2022
+
+SKILLS:
+- Cloud & DevOps: AWS, Docker, Kubernetes, Terraform, Ansible, Jenkins, CI/CD, Linux, Git
+- Scripting: Python, Bash, Shell
+- Networking & Security: Nginx, REST API
+
+EXPERIENCE:
+Cloud DevOps Engineer | CloudScale Systems
+2022 - Present (4 years of experience)
+- Built automated deployment pipelines using Jenkins, Docker, and AWS EC2/EKS.

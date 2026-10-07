@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ candidate.candidate_name }} - Resume Evaluation Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <span>Resume Screener AI</span>
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                <a href="{{ url_for('results', job_id=candidate.job_id) }}" class="nav-link">← Results Dashboard</a>
+                <a href="{{ url_for('screening') }}" class="nav-btn">Start Screening</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Candidate Analysis Container -->
+    <main class="main-content">
+        <!-- Candidate Header Card -->
+        <div class="candidate-header">
+            <div>
+                <span style="color: var(--primary); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Candidate Evaluation — Rank #{{ candidate.rank_order }}</span>
+                <h1 style="font-size: 2.2rem; font-weight: 800; margin-top: 4px; color: var(--text-primary);">{{ candidate.candidate_name }}</h1>
+                <p style="color: var(--text-secondary); margin-top: 4px;">
+                    Target Role: <strong>{{ job.job_title }}</strong> &nbsp;|&nbsp; File: <code>{{ candidate.filename }}</code>
+                </p>
+            </div>
+            <div class="overall-score-box">
+                <div class="score-num">{{ candidate.final_score }}%</div>
+                <div style="color: var(--primary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;">Overall Match Score</div>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+            <!-- Left Column: Match Component Progress Bars -->
+            <div class="card" style="margin-top: 0;">
+                <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); color: var(--text-primary);">
+                    Evaluation Metrics Breakdown
+                </h3>
+
+                <!-- 1. Skills Match (40%) -->
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span>Skills Match (Weight: 40%)</span>
+                        <span style="color: #6366f1;">{{ candidate.skill_score }}%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill bg-skill" data-width="{{ candidate.skill_score }}%"></div>
+                    </div>
+                </div>
+
+                <!-- 2. TF-IDF Similarity (25%) -->
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span>TF-IDF Vector Similarity (Weight: 25%)</span>
+                        <span style="color: #0284c7;">{{ candidate.tfidf_score }}%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill bg-tfidf" data-width="{{ candidate.tfidf_score }}%"></div>
+                    </div>
+                </div>
+
+                <!-- 3. Experience Match (20%) -->
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span>Experience Match (Weight: 20%)</span>
+                        <span style="color: #059669;">{{ candidate.experience_score }}%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill bg-exp" data-width="{{ candidate.experience_score }}%"></div>
+                    </div>
+                </div>
+
+                <!-- 4. Education Match (15%) -->
+                <div class="progress-container">
+                    <div class="progress-header">
+                        <span>Education Match (Weight: 15%)</span>
+                        <span style="color: #d97706;">{{ candidate.education_score }}%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill bg-edu" data-width="{{ candidate.education_score }}%"></div>
+                    </div>
+                </div>
+
+                <!-- Extracted Experience & Education Summary -->
+                <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color); display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div style="background: var(--bg-main); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color);">
+                        <span style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Extracted Experience</span>
+                        <div style="font-weight: 700; font-size: 1.1rem; color: var(--success); margin-top: 2px;">
+                            {{ candidate.extracted_experience }} Years
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Required: {{ job.min_experience }} yrs</div>
+                    </div>
+                    <div style="background: var(--bg-main); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color);">
+                        <span style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Extracted Education</span>
+                        <div style="font-weight: 700; font-size: 0.95rem; color: var(--warning); margin-top: 2px;">
+                            {{ candidate.extracted_education }}
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Required: {{ job.required_education }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Radar Chart & Action -->
+            <div class="card" style="margin-top: 0; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); color: var(--text-primary);">
+                        Component Score Radar Chart
+                    </h3>
+                    <div style="max-height: 280px; display: flex; justify-content: center;">
+                        <canvas id="candidateRadarChart"></canvas>
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem; text-align: center;">
+                    <a href="{{ url_for('view_resume', candidate_id=candidate.id) }}" target="_blank" class="btn btn-secondary" style="width: 100%; justify-content: center;">
+                        View Extracted Resume Text
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Analysis Details Card -->
+        <div class="card" style="margin-top: 0;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-primary);">Skills Extraction Analysis</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Matched Skills -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--success); margin-bottom: 0.5rem;">
+                        Matched Skills ({{ candidate.matched_skills|length }})
+                    </h4>
+                    <div class="skills-badge-list">
+                        {% for skill in candidate.matched_skills %}
+                            <span class="badge-matched">{{ skill }}</span>
+                        {% else %}
+                            <span style="color: var(--text-muted); font-style: italic;">No required skills matched in resume.</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Missing Skills -->
+                <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--danger); margin-bottom: 0.5rem;">
+                        Missing Skills ({{ candidate.missing_skills|length }})
+                    </h4>
+                    <div class="skills-badge-list">
+                        {% for skill in candidate.missing_skills %}
+                            <span class="badge-missing">{{ skill }}</span>
+                        {% else %}
+                            <span class="badge-matched">All Required Skills Matched</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Candidate Detailed Evaluation Report &copy; 2026</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('candidateRadarChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Skill Match', 'TF-IDF Similarity', 'Experience Match', 'Education Match'],
+                    datasets: [{
+                        label: 'Candidate Score',
+                        data: [
+                            {{ candidate.skill_score }},
+                            {{ candidate.tfidf_score }},
+                            {{ candidate.experience_score }},
+                            {{ candidate.education_score }}
+                        ],
+                        backgroundColor: 'rgba(67, 56, 202, 0.15)',
+                        borderColor: '#4338ca',
+                        borderWidth: 2,
+                        pointBackgroundColor: '#0284c7',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#0284c7'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#e2e8f0' },
+                            grid: { color: '#e2e8f0' },
+                            pointLabels: { color: '#475569', font: { size: 11, weight: '600', family: 'Inter' } },
+                            ticks: { color: '#94a3b8', backdropColor: 'transparent' },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

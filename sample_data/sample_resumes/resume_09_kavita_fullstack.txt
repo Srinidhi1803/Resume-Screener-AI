@@ -1,0 +1,20 @@
+Kavita Rao
+Email: kavita.rao@example.com
+
+SUMMARY:
+Full Stack Web Developer with 3 years of experience building Python Django and Flask web applications with modern React frontends and PostgreSQL databases.
+
+EDUCATION:
+Master of Computer Applications (MCA)
+2020 - 2023
+
+SKILLS:
+- Languages & Backend: Python, Django, Flask, REST API, SQL, PostgreSQL
+- Frontend: React, JavaScript, HTML, CSS
+- DevOps & Tools: Git, Docker, AWS
+
+EXPERIENCE:
+Full Stack Developer | TechMatrix Solutions
+2023 - Present (3 years experience)
+- Designed full stack web applications utilizing Flask REST API backend, PostgreSQL database, and React frontend.
+- Containerized services with Docker and pushed deployment to AWS.

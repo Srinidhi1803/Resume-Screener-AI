@@ -1,0 +1,17 @@
+Job Title: Senior NLP & Full Stack Python Engineer
+
+Job Description:
+We are seeking an experienced Senior NLP & Full Stack Python Engineer to join our AI solutions team. 
+The ideal candidate will be responsible for designing and deploying natural language processing pipelines, 
+RESTful microservices, and web dashboards. You will build intelligent document processing and text analytics engines.
+
+Required Qualifications:
+- Bachelor's degree in Computer Science, Technology (B.Tech / B.E.) or Master's degree (M.Tech / MCA / MSc).
+- 3+ years of professional software development experience.
+- Strong proficiency in Python, Flask or Django, and SQL databases (PostgreSQL/MySQL/SQLite).
+- Expertise in NLP frameworks such as spaCy, NLTK, Scikit-learn, and Machine Learning models.
+- Experience with cloud platforms (AWS/Azure/GCP), Docker, Git, and REST API design.
+- Frontend knowledge in JavaScript, HTML, and CSS is a plus.
+
+Required Skills:
+Python, NLP, spaCy, Flask, SQL, Machine Learning, Scikit-learn, AWS, Docker, Git, REST API, JavaScript

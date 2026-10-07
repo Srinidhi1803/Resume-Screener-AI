@@ -1,0 +1,19 @@
+Sanya Verma
+Email: sanya.verma@example.com
+
+SUMMARY:
+Junior Software Developer / Graduate Fresher passionate about Python development and web applications.
+
+EDUCATION:
+Bachelor of Computer Applications (BCA)
+2022 - 2025
+
+SKILLS:
+- Languages: Python, C, HTML, CSS, JavaScript
+- Frameworks: Flask, SQL, Git
+- Basic exposure to Machine Learning concepts and NLP projects during coursework.
+
+EXPERIENCE:
+Software Engineering Intern | TechStart Inc
+Jan 2025 - Present (0.5 years experience)
+- Assisted in building Python scripts and Flask web prototypes.

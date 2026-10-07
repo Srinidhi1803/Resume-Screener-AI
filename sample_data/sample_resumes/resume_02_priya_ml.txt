@@ -1,0 +1,20 @@
+Priya Patel
+Email: priya.patel@example.com | Phone: +91 9812345678
+
+SUMMARY:
+Machine Learning Engineer with 4 years of experience specializing in Natural Language Processing, Deep Learning, and Python framework development.
+
+EDUCATION:
+Master of Technology (M.Tech) in Artificial Intelligence
+National Institute of Technology, 2020 - 2022
+
+TECHNICAL SKILLS:
+- Core: Python, R, SQL, Java
+- AI/ML/NLP: NLP, spaCy, PyTorch, TensorFlow, Scikit-learn, Machine Learning, Deep Learning, Pandas
+- Cloud & Tools: AWS, Docker, Kubernetes, Git, REST API
+
+EXPERIENCE:
+ML Engineer | DataTech Labs
+2022 - Present (4 years experience)
+- Built NLP text classification models and custom named entity recognition pipelines using spaCy and Transformers.
+- Deployed ML models as REST API services using Python and Docker on AWS.
